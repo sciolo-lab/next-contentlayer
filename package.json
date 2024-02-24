@@ -35,8 +35,6 @@
     "./package.json"
   ],
   "scripts": {
-    "postinstall": "ts-patch install",
-    "prepare": "ts-patch install -s",
     "test": "CI=true VITEST_SEGFAULT_RETRY=3 test",
     "build": "tsc --build tsconfig.json",
     "dev": "tsc --build tsconfig.json --watch",
