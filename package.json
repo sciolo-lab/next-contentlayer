@@ -35,7 +35,12 @@
     "./package.json"
   ],
   "scripts": {
-    "prepack": "awk '!/^export|^import/' dist/index-cjs.js > dist/index-cjs.cjs; cp src/hooks/jsx-runtime.cjs dist/hooks/jsx-runtime.cjs"
+    "postinstall": "ts-patch install",
+    "prepare": "ts-patch install -s",
+    "test": "CI=true VITEST_SEGFAULT_RETRY=3 test",
+    "build": "tsc --build tsconfig.json",
+    "dev": "tsc --build tsconfig.json --watch",
+    "prepack": "awk '!/^export|^import/' dist/index-cjs.cjs > dist/index-cjs.cjs; cp dist/hooks/jsx-runtime.cjs dist/hooks/jsx-runtime.cjs"
   },
   "dependencies": {
     "@contentlayer/core": "latest",
@@ -52,7 +57,8 @@
     "@types/react-dom": "^18.2.6",
     "next": "^14.1.0",
     "typescript": "^5.1.6",
-    "webpack": "^5.88.1"
+    "webpack": "^5.88.1",
+    "ts-patch": "^2.1.0"
   },
   "author": "schickling",
   "homepage": "https://github.com/contentlayerdev/contentlayer",
