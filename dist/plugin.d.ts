@@ -1,4 +1,4 @@
-import "contentlayer/utils/effect/Tracing/Enable";
+import "@contentlayer/utils/effect/Tracing/Enable";
 import type { WebpackOptionsNormalized } from "webpack";
 export type NextPluginOptions = {
     configPath?: string | undefined;

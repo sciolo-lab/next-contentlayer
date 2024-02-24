@@ -1,4 +1,4 @@
-import "contentlayer/utils/effect/Tracing/Enable";
+import "@contentlayer/utils/effect/Tracing/Enable";
 import * as core from "@contentlayer/core";
 import { errorToString } from "@contentlayer/utils";
 import { E, OT, pipe, S, T } from "@contentlayer/utils/effect";
